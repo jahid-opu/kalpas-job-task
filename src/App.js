@@ -63,7 +63,7 @@ function App() {
 
   return (
     <div className="bg-gray-200 grid grid-cols-12 py-12">
-      <div className=" col-span-3">
+      <div className="shadow-md col-span-3">
         <LeftSidebar
           viewToggle={viewToggle}
           setViewToggle={setViewToggle}
@@ -87,17 +87,48 @@ function App() {
         )}
         <ReactPaginate
           breakLabel="..."
-          nextLabel=" >>>"
+          nextLabel={
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 -mb-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 5l7 7-7 7M5 5l7 7-7 7"
+              />
+            </svg>
+          }
           onPageChange={handlePageClick}
-          pageRangeDisplayed={5}
+          pageRangeDisplayed={3}
           pageCount={pageCount}
-          previousLabel="<<<"
+          previousLabel={
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M11 19l-7-7 7-7m8 14l-7-7 7-7"
+              />
+            </svg>
+          }
           renderOnZeroPageCount={null}
           containerClassName="paginationBttns"
           previousLinkClassName="previousBttn"
           nextLinkClassName="nextBttn"
           disabledClassName="paginationDisabled"
           activeClassName="paginationActive"
+          pageLinkClassName="pageLink"
         />
       </div>
       <FormModal show={modalShow} onHide={() => setModalShow(false)} />

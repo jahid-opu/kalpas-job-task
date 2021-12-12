@@ -16,6 +16,10 @@
   color: white;
   background-color: blue;
 }
+.previousBttn {
+  /* margin-top: -100px !important; */
+}
+
 .newsCard {
   position: relative;
   cursor: pointer;
@@ -25,4 +29,12 @@
   position: absolute;
   top: 0;
   right: 0;
+}
+.verticleCard {
+  position: relative;
+}
+.removeCard {
+  position: absolute;
+  top: 50px;
+  right: -55px;
 }
