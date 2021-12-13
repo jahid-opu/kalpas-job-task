@@ -8,12 +8,13 @@ import VerticleNewsfeed from "./components/VerticleNewsfeed";
 
 function App() {
   const [items, setItems] = useState([]);
-  const [currentItems, setCurrentItems] = useState(null);
-  const [pageCount, setPageCount] = useState(0);
-  const [itemOffset, setItemOffset] = useState(0);
   const [viewToggle, setViewToggle] = useState(false);
   const [feedback, setFeedback] = useState(false);
   const [modalShow, setModalShow] = useState(false);
+  // States for pagination
+  const [currentItems, setCurrentItems] = useState(null);
+  const [pageCount, setPageCount] = useState(0);
+  const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 6;
 
   useEffect(() => {
@@ -25,7 +26,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Fetch items from another resources.
     const endOffset = itemOffset + itemsPerPage;
     setCurrentItems(items.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(items.length / itemsPerPage));
@@ -34,9 +34,6 @@ function App() {
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % items.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
     setItemOffset(newOffset);
   };
 
@@ -44,6 +41,7 @@ function App() {
     const newItem = currentItems.filter((item) => item.id !== id);
     setCurrentItems(newItem);
   };
+
   function Items({ currentItems }) {
     return (
       <>
@@ -65,7 +63,6 @@ function App() {
   const onModalHide = () => {
     setModalShow(false);
     setFeedback(false);
-    console.log("on modal hide hit...");
   };
 
   return (

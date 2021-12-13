@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import MyVerticallyCenteredModal from "./MyVerticallyCenteredModal";
-import { Modal, Button } from "react-bootstrap";
 
 const VerticleNewsfeed = ({ post, handleRemove }) => {
   const [modalShow, setModalShow] = useState(false);

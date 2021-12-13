@@ -11,6 +11,7 @@ const LeftSidebar = ({
     setModalShow(true);
     setFeedback(true);
   };
+
   return (
     <div className="p-4 ml-8">
       <div className="mb-3 flex p-2 w-52 justify-around bg-gray-50">
