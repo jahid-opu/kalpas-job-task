@@ -7,17 +7,18 @@
   justify-content: center;
 }
 .paginationBttns a {
-  padding: 10px;
-  margin: 8px;
+  padding: 5px;
+  margin: 10px;
 }
 .paginationBttns a:hover {
 }
-.paginationActive {
+.paginationActive a {
+  padding: 5px 15px;
+  border-radius: 5px;
   color: white;
-  background-color: blue;
+  background-color: gray;
 }
 .previousBttn {
-  /* margin-top: -100px !important; */
 }
 
 .newsCard {

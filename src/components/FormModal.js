@@ -102,46 +102,54 @@ const MyVerticallyCenteredModal = (props) => {
           <br />
           <form>
             <input
-              className="px-3 py-2 my-1 w-96 border border-teal-300 placeholder-gray-500 text-blueGray-600 relative tracking-wide rounded-lg bg-white text-base   outline-none focus:outline-none focus: -outline w-full"
+              className="px-3 py-2 my-1 w-96 border border-teal-300 placeholder-gray-500 text-blueGray-600 relative tracking-wide rounded-lg bg-white text-base   outline-none focus:outline-none focus: -outline  "
               placeholder="First Name"
             />
             <br />
             <input
-              className="px-3 py-2 my-1 w-96 border border-teal-300 placeholder-gray-500 text-blueGray-600 relative tracking-wide rounded-lg bg-white text-base   outline-none focus:outline-none focus: -outline w-full"
+              className="px-3 py-2 my-1 w-96 border border-teal-300 placeholder-gray-500 text-blueGray-600 relative tracking-wide rounded-lg bg-white text-base   outline-none focus:outline-none focus: -outline  "
               placeholder="Last Name"
             />
             <br />
             <input
-              className="px-3 py-2 my-1 w-96  border border-teal-300 placeholder-gray-500 text-blueGray-600 relative tracking-wide rounded-lg bg-white text-base   outline-none focus:outline-none focus: -outline w-full"
+              className="px-3 py-2 my-1 w-96  border border-teal-300 placeholder-gray-500 text-blueGray-600 relative tracking-wide rounded-lg bg-white text-base   outline-none focus:outline-none focus: -outline  "
               placeholder="Address"
             />
+            <br />
+            <label className="text-gray-400">Country:</label>
             <CountrySelector />
             <input
               onChange={handleEmailChange}
               name="email"
-              className="px-3 py-2 my-1 w-96 border border-teal-300 placeholder-gray-500 text-blueGray-600 relative tracking-wide rounded-lg bg-white text-base   outline-none focus:outline-none focus: -outline w-full"
+              className="px-3 py-2 my-1 w-96 border border-teal-300 placeholder-gray-500 text-blueGray-600 relative tracking-wide rounded-lg bg-white text-base   outline-none focus:outline-none focus: -outline  "
               placeholder="Email"
             />
             <br />
             {!isEmailValid && (
-              <p style={{ color: "red" }}>Not a valid Account</p>
+              <p style={{ color: "red" }}>Please Enter a Valid Email</p>
             )}
             <input
               onChange={handlePhoneChange}
-              className="px-3 py-2 my-1  border w-96 border-teal-300 placeholder-gray-500 text-blueGray-600 relative tracking-wide rounded-lg bg-white text-base   outline-none focus:outline-none focus: -outline w-full"
+              className="px-3 py-2 my-1  border w-96 border-teal-300 placeholder-gray-500 text-blueGray-600 relative tracking-wide rounded-lg bg-white text-base   outline-none focus:outline-none focus: -outline  "
               placeholder="Mobile number"
               name="number"
             />{" "}
             <br />
             {!isNumberValid && (
-              <p style={{ color: "red" }}>Not a valid Number</p>
+              <p style={{ color: "red" }}>Please Enter a Valid Number</p>
             )}
-            <input className="btn bg-gray-500" type="submit" value="submit" />
+            <input
+              className="btn bg-emerald-400 mt-4"
+              type="submit"
+              value="submit"
+            />
           </form>
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button className="bg-gray-800 border-none" onClick={props.onHide}>
+          Close
+        </Button>
       </Modal.Footer>
     </Modal>
   );

@@ -15,11 +15,12 @@ const MyVerticallyCenteredModal = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
         <p>{props.post}</p>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button className="bg-gray-800 border-none" onClick={props.onHide}>
+          Close
+        </Button>
       </Modal.Footer>
     </Modal>
   );

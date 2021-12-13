@@ -12,6 +12,7 @@ function App() {
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
   const [viewToggle, setViewToggle] = useState(false);
+  const [feedback, setFeedback] = useState(false);
   const [modalShow, setModalShow] = useState(false);
   const itemsPerPage = 6;
 
@@ -61,6 +62,12 @@ function App() {
     );
   }
 
+  const onModalHide = () => {
+    setModalShow(false);
+    setFeedback(false);
+    console.log("on modal hide hit...");
+  };
+
   return (
     <div className="bg-gray-200 grid grid-cols-12 py-12">
       <div className="shadow-md col-span-3">
@@ -68,6 +75,8 @@ function App() {
           viewToggle={viewToggle}
           setViewToggle={setViewToggle}
           setModalShow={setModalShow}
+          feedback={feedback}
+          setFeedback={setFeedback}
         />
       </div>
       <div className="col-span-9">
@@ -90,7 +99,7 @@ function App() {
           nextLabel={
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 -mb-4"
+              className="h-6 w-6 ml-4 -mt-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -109,7 +118,7 @@ function App() {
           previousLabel={
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              className="h-6 w-6 mr-4 -mt-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -131,7 +140,7 @@ function App() {
           pageLinkClassName="pageLink"
         />
       </div>
-      <FormModal show={modalShow} onHide={() => setModalShow(false)} />
+      <FormModal show={modalShow} onHide={() => onModalHide()} />
     </div>
   );
 }
